@@ -1,11 +1,20 @@
 import React from 'react';
 import './Message.css';
+import { Card, CardContent, Typography } from '@material-ui/core';
 
-function Message({ content }) {
+function Message({ username, text }) {
     return (
-        <div className="message">
-            <p>{content}</p>
-        </div>
+        <Card className="message__card">
+            <CardContent>
+                <Typography
+                    color="white"
+                    variant="h5"
+                    component="h2"
+                >
+                    {username}: {text}
+                </Typography>
+            </CardContent>
+        </Card>
     )
 }
 

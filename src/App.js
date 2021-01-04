@@ -6,7 +6,10 @@ import Message from './components/Message';
 function App() {
   // useState
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    { username: 'Kyler', text: 'Hellooooo' },
+    { username: 'Khai', text: 'Yo!! Man' }
+  ]);
   const [username, setUsername] = useState('');
 
   // useEffect
@@ -19,7 +22,10 @@ function App() {
     e.preventDefault();
 
     // Append new message
-    setMessages([...messages, input]);
+    setMessages([...messages, {
+      username: username,
+      text: input
+    }]);
 
     // Clear the input
     setInput('');
@@ -32,6 +38,7 @@ function App() {
   return (
     <div className="App">
       <h1>Eyy! Let's join in our Messenger Clone</h1>
+      <h2>Hello {username}</h2>
 
       <form onSubmit={sendMessageHandler}>
         <FormControl>
@@ -43,7 +50,7 @@ function App() {
 
       {
         messages.map((message, index) => (
-          <Message key={index} content={message} />
+          <Message key={index} username={message.username} text={message.text} />
         ))
       }
     </div>

@@ -1,22 +1,31 @@
 import React, { forwardRef } from 'react';
 import './Message.css';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Card, CardContent, Typography, Avatar } from '@material-ui/core';
 
 const Message = forwardRef(({ username,  message}, ref) => {
     const isUser = username === message.username;
 
     return (
         <div ref={ref} className={`message ${isUser && "message__user"}`}>
-            <Card className={isUser ? "message__userCard" : "message__guestCard"}>
-                <CardContent>
-                    <Typography
-                        variant="h6"
-                        component="h2"
+            <div className="message__component">
+                {!isUser && <Avatar className="message__avatar" />}
+                <div className="message__body">
+                    <h2>{!isUser && `${message.username}`}</h2>
+                    <Card 
+                        className={isUser ? "message__userCard" : "message__guestCard"}
+                        title={new Date(message.timestamp?.toDate()).toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                     >
-                        {!isUser && `${message.username}: `} {message.message}
-                    </Typography>
-                </CardContent>
-            </Card>
+                        <CardContent>
+                            <Typography
+                                variant="h6"
+                                component="h2"
+                            >
+                                {message.message}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </div>
+            </div>
         </div>
     )
 })

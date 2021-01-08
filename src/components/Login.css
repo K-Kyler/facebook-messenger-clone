@@ -12,17 +12,23 @@
 
 .login__logo > img {
     object-fit: contain;
-    height: 10rem;
+    height: 8rem;
 }
 
-.login__logo > button {
+.login > button {
     font-weight: 800;
     background-color: rgb(24, 119, 242);
     color: #eff2f5;
     margin-top: 3rem;    
+    width: 10rem;
 }
 
-.login__logo > button:hover {
+.login > button:hover {
     background-color: white;
     color: rgb(24, 119, 242);
 }
+
+.login__logo > h1 {
+    font-weight: 400;
+    font-size: 3rem;
+  }

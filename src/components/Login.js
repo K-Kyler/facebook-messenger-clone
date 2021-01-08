@@ -17,11 +17,12 @@ function Login({ user, setUser }) {
                     src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg"
                     alt=''
                 />
-                <Button 
-                    type="submit"
-                    onClick={signInHandler}
-                >Sign In</Button>
+                <h1>Messenger App</h1>
             </div>
+            <Button 
+                type="submit"
+                onClick={signInHandler}
+            >Sign In</Button>
         </div>
     )
 }

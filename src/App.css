@@ -5,6 +5,7 @@
 .app__header > h1 {
   font-weight: 400;
   font-size: 3rem;
+  margin: 0.5rem 0;
 }
 
 .app__header > h2 {
@@ -16,6 +17,7 @@
 
 .app__header > img {
   margin-top: 1.5rem;
+  height: 7rem;
 }
 
 .app__form {
